@@ -14,7 +14,7 @@ public class LinearSearch {
         int arr[]={1,2,4,5,6,8,9,3};
         System.out.println("Enter a number you need to search:");
         int element=scanner.nextInt();
-        int result=search(arr,element);
+        int result=linerSearch(arr,element);
         if(result==-1){
             System.out.println("Element not found");
         }
@@ -23,7 +23,7 @@ public class LinearSearch {
         
     }
 
-    private static int search(int[] arr, int element) {
+    private static int linerSearch(int[] arr, int element) {
         int last=arr.length;
         for(int i=0;i<=last;i++){
             if(arr[i]==element){
