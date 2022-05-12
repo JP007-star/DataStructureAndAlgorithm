@@ -11,10 +11,14 @@ import java.util.Scanner;
 public class LinearSearch {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
+
         int arr[]={1,2,4,5,6,8,9,3};
+
         System.out.println("Enter a number you need to search:");
         int element=scanner.nextInt();
+
         int result=linerSearch(arr,element);
+
         if(result==-1){
             System.out.println("Element not found");
         }

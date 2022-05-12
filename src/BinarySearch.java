@@ -12,9 +12,13 @@ public class BinarySearch {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
         int arr[]={1,2,3,4,5,6,8,9};
+
         System.out.println("Enter a number you need to search:");
+
         int element=scanner.nextInt();
-        int result=binarySearch(arr,element)+1;
+
+        int result=binarySearch(arr,element);
+
         if(result==(-1)){
             System.out.println("Element not found");
         }
@@ -24,23 +28,33 @@ public class BinarySearch {
     }
 
     private static int binarySearch(int[] arr, int element) {
-        int right= arr.length;
-        int left=0;
+        int lastIndex=arr.length;
+        int firstIndex=0;
 
-        for(int i=0; i<=right;i++){
+        for( int i=0;i<=lastIndex;i++){
 
-            int mid=(left+right)/2;
+            int midIndex=(firstIndex+lastIndex)/2;
 
-            if(arr[mid]==element){
-               return mid;
-           }
-
-            if(arr[mid]<element){
-               left=mid+1;
+            if(arr[midIndex]== element ){
+                return midIndex+1;
             }
-            else right=mid-1;
+             System.out.println("mid "+arr[midIndex]+"ele "+element);
+            if(arr[midIndex]<element){
+                firstIndex=midIndex-1;
+            }
+            else{
+                lastIndex=midIndex+1;
+            }
 
         }
         return -1;
     }
 }
+
+
+
+
+
+
+
+
