@@ -28,25 +28,19 @@ public class BinarySearch {
     }
 
     private static int binarySearch(int[] arr, int element) {
-        int lastIndex=arr.length;
         int firstIndex=0;
+        int lastIndex=arr.length-1;
 
-        for( int i=0;i<=lastIndex;i++){
-
-            int midIndex=(firstIndex+lastIndex)/2;
-
-            if(arr[midIndex]== element ){
-                return midIndex+1;
+        while(firstIndex<=lastIndex){
+            int pivot =firstIndex+(lastIndex-firstIndex)/2;
+            if(arr[pivot]==element){
+                return pivot;
             }
-             System.out.println("mid "+arr[midIndex]+"ele "+element);
-            if(arr[midIndex]<element){
-                firstIndex=midIndex-1;
+            if(element<arr[pivot]){
+                lastIndex=pivot-1;
             }
-            else{
-                lastIndex=midIndex+1;
-            }
-
         }
+
         return -1;
     }
 }
