@@ -1,3 +1,5 @@
+package problems;
+
 /*** https://leetcode.com/explore/learn/card/fun-with-arrays/521/introduction/3238/
  * Author: Jaya Prasad .M
  * Email: justice_of_peace@yahoo.com
