@@ -1,6 +1,6 @@
-/*
+package sort;/*
  * @project DataStructureAndAlgorithm
- * @fileName BubbleSort
+ * @fileName sort.BubbleSort
  * @author Jaya Prasad.M --> jaya_muthukrishnan
  * @email jaya_muthukrishnan@thbs.com
  * @date 15 12 2021 01:41 PM
@@ -39,7 +39,7 @@ public class BubbleSort {
 
 ///*
 // * @project DataStructureAndAlgorithm
-// * @fileName BubbleSort
+// * @fileName sort.BubbleSort
 // * @author Jaya Prasad.M --> jaya_muthukrishnan
 // * @email jaya_muthukrishnan@thbs.com
 // * @date 15 12 2021 01:41 PM
@@ -47,7 +47,7 @@ public class BubbleSort {
 //
 //import java.util.Scanner;
 //
-//public class BubbleSort {
+//public class sort.BubbleSort {
 //    public static void main(String[] args) {
 //        Scanner scanner=new Scanner(System.in);
 //        int arr[]={1,5,4,9,6,7,2,3};

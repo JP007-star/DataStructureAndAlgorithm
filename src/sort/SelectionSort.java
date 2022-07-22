@@ -1,3 +1,5 @@
+package sort;
+
 public class SelectionSort {
     public static void main(String[] args) {
         int arr[]={1,23,54,66,4,7,28,45,87,24};
