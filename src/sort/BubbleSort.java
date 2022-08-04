@@ -24,7 +24,7 @@ public class BubbleSort {
         for(int i=0;i<=last;i++){
 
             for(int j=0;j<last-i;j++){
-
+               // System.out.println(j);
                 if(arr[j]>arr[j+1]){
                     int temp=arr[j];
                     arr[j]=arr[j+1];

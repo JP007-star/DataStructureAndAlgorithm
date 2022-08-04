@@ -9,15 +9,24 @@ public class InsertionSort {
         }
     }
     public static int[]  insertionSort(int[] arr){
-        for(int i=1;i< arr.length;i++) {
-            int temp = arr[i];
-            int j=i-1;                  // sorted array position
+        int size=arr.length;
+        for (int step = 1; step < size; step++) {
+            int key = arr[step];
+            int j = step - 1;
 
-            while(j>=0&& arr[j]>temp){
-                arr[j+1]=arr[j];       // swapping ele in sorted array to unsorted array (/ shifting larger elements to temp by 1 pos)
-                j--;
+            // Compare key with each element on the left of it until an element smaller than
+            // it is found.
+            // For descending order, change key<array[j] to key>array[j].
+
+
+            while (j >= 0 && key < arr[j]) {
+                arr[j + 1] = arr[j];
+                --j;
             }
-            arr[j+1]=temp;
+
+            // Place key at after the element just smaller than it.
+            arr[j + 1] = key;
+
         }
         return  arr;
     }
