@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class BinarySearch {
     public static void main(String[] args) {
         Scanner scanner=new Scanner(System.in);
-        int arr[]={1,2,3,4,5,6,8,9};
+        int arr[]={-1,0,3,5,9,12};
 
         System.out.println("Enter a number you need to search:");
 
@@ -27,24 +27,45 @@ public class BinarySearch {
 
     }
 
-    private static int binarySearch(int[] arr, int element) {
-        int firstIndex=0;
-        int lastIndex=arr.length-1;
+    private static int binarySearch(int[] nums, int target) {
+        int startIndex=0;
+        int endIndex=nums.length;
 
-        while(firstIndex<=lastIndex){
-            int pivot =firstIndex+(lastIndex-firstIndex)/2;
-            if(arr[pivot]==element){
-                return pivot;
+        while(startIndex<=endIndex){
+
+            int pivot=startIndex+(endIndex-startIndex)/2;
+
+            if(pivot<= nums.length-1) {
+
+                if (nums[pivot] == target) return pivot;
+
+                if (nums[pivot] < target) startIndex = pivot + 1;
+                else endIndex = pivot - 1;
             }
-            if(element<arr[pivot]){
-                lastIndex=pivot-1;
-            }
+            else return -1;
+
+
         }
-
         return -1;
     }
 }
 
+
+/*
+
+ while (left <=right)
+
+
+ mid =left+(right-left)/2
+
+ if(nums[mid]== target)  return mid
+
+ if nums[mid] <=target  left=pivot+1
+
+ else  right=mid-1;
+
+
+ */
 
 
 
