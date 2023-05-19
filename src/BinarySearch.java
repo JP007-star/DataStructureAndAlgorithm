@@ -35,7 +35,7 @@ public class BinarySearch {
 
             int pivot=startIndex+(endIndex-startIndex)/2;
 
-            if(pivot<= nums.length-1) {
+            if(pivot<= nums.length-1) {   //-->  eliminating array out of bound exception  when call number not in array
 
                 if (nums[pivot] == target) return pivot;
 
