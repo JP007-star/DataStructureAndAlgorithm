@@ -44,8 +44,14 @@ public class MajorityElement {
 
     /*
     *
+Boyer-Moore Voting Algorithm.
+The idea is to cancel out each occurrence of an element with all the other elements that are different from it.
+The majority element will be the one that remains after the cancellations.
+
 
 Given an array nums of size n, return the majority element.
+
+
 The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
 
 Example 1:
