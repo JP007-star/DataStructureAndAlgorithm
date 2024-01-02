@@ -1,5 +1,13 @@
 package scalar;
 public class MajorityElement {
+
+    public static void main(String[] args) {
+        int[] nums1 = {3, 2, 3};
+        System.out.println(majorityElement(nums1)); // Output: 3
+
+        int[] nums2 = {2, 2, 1, 1, 1, 2, 2};
+        System.out.println(majorityElement(nums2)); // Output: 2
+    }
     public static int majorityElement(int[] nums) {
         int candidate = 0;
         int count = 0;
@@ -9,7 +17,7 @@ public class MajorityElement {
             if (count == 0) {
                 candidate = num;
             }
-
+            System.out.println("  j "+candidate +" count"+ count);
             count += (num == candidate) ? 1 : -1;
         }
 
@@ -30,13 +38,7 @@ public class MajorityElement {
         return -1;
     }
 
-    public static void main(String[] args) {
-        int[] nums1 = {3, 2, 3};
-        System.out.println(majorityElement(nums1)); // Output: 3
 
-        int[] nums2 = {2, 2, 1, 1, 1, 2, 2};
-        System.out.println(majorityElement(nums2)); // Output: 2
-    }
 }
 
 
