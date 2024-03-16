@@ -13,14 +13,14 @@ public class TimeComplexityDemo {
         System.out.println("Time Taken: "+(System.currentTimeMillis()-now)+" milliseconds");
     }
 
-    private static int findSum(int n) {
-        return n*(n+1)/2;
-    }
 //    private static int findSum(int n) {
-//        int sum=0;
-//        for(int i=1;i<=n;i++){
-//            sum+=i;
-//        }
-//        return sum;
+//        return n*(n+1)/2;
 //    }
+    private static int findSum(int n) {
+        int sum=0;
+        for(int i=1;i<=n;i++){
+            sum+=i;
+        }
+        return sum;
+    }
 }

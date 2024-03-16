@@ -1,6 +1,7 @@
-package scalar;
+package dsa.array;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class TwoSum {
@@ -20,12 +21,13 @@ public class TwoSum {
         Map<Integer,Integer> map=new HashMap<>();
 
         for (int i=0;i<nums.length;i++){
+            map.put(nums[i],i);
             int ans=target-nums[i];
             if(map.containsKey(ans)){
                 result[0]=map.get(ans);
                 result[1]=i;
             }
-            map.put(nums[i],i);
+
         }
 
         return result;

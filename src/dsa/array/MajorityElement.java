@@ -1,4 +1,4 @@
-package scalar;
+package dsa.array;
 public class MajorityElement {
 
     public static void main(String[] args) {
@@ -17,7 +17,6 @@ public class MajorityElement {
             if (count == 0) {
                 candidate = num;
             }
-            System.out.println("  j "+candidate +" count"+ count);
             count += (num == candidate) ? 1 : -1;
         }
 

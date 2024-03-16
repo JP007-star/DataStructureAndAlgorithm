@@ -1,4 +1,4 @@
-package scalar;
+package dsa.array;
 
 import java.util.Scanner;
 

@@ -1,3 +1,11 @@
+
+i5 processor
+512 SSD
+
+Intellij
+vs code
+
+
 Roadmap
 # Getting start
 

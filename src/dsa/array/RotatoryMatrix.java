@@ -1,4 +1,4 @@
-package scalar;
+package dsa.array;
 
 public class RotatoryMatrix {
     public static void main(String[] args) {
