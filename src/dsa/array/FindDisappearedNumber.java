@@ -29,9 +29,22 @@ public class FindDisappearedNumber {
 
         // Test cases
         int[] nums1 = {4, 3, 2, 7, 8, 2, 3, 1};
+        int[] nums= {4,5,7, 8, 2, 3, 1};
         System.out.println(findDisappearedNumbers(nums1));  // Output: [5, 6]
 
         int[] nums2 = {1, 1};
+        System.out.println(findMissedNumbers(nums));
         System.out.println(findDisappearedNumbers(nums2));  // Output: [2]
+    }
+
+    private static int findMissedNumbers(int [] nums){
+        int n= nums.length+1;
+        int sum=n*(n+1)/2;
+        System.out.println(sum);
+        for (int i:
+             nums) {
+            sum-=i;
+        }
+       return sum;
     }
 }

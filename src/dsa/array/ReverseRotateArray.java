@@ -1,8 +1,6 @@
-package problems;
+package dsa.array;
 
-import java.util.Arrays;
-
-public class RotateArray {
+public class ReverseRotateArray {
     public static void main(String[] args) {
            int[] nums ={1,3,5,6,8,9};
            int k=2;
