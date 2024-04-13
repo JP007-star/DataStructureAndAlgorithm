@@ -8,11 +8,11 @@ public class SinglyLinkedList {
 
     private static class ListNode {
         private int data;
-        private ListNode tailNode;
+        private ListNode next;
 
         public ListNode (int data) {
             this.data = data;
-            this.tailNode = null;
+            this.next = null;
         }
     }
 
@@ -27,13 +27,16 @@ public class SinglyLinkedList {
         ListNode fourth=new ListNode(3);
 
         // Linking of linkedList
-        singlyLinkedList.headNode.tailNode=second; // 10 -> 8
-        second.tailNode=third; // 10 -> 8 -> 7
-        third.tailNode=fourth; // 10 -> 8 -> 7 -> 3
+        singlyLinkedList.headNode.next=second; // 10 -> 8
+        second.next=third; // 10 -> 8 -> 7
+        third.next=fourth; // 10 -> 8 -> 7 -> 3
 
         singlyLinkedList.insertFirstNode(6);
         singlyLinkedList.insertLastNode(6);
+        singlyLinkedList.insertAtPos(2,9);
+        singlyLinkedList.firstDelete();
 
+        singlyLinkedList.lastNode();
         // printing List Node
         singlyLinkedList.printListNode();
 
@@ -47,9 +50,10 @@ public class SinglyLinkedList {
         ListNode current=headNode;
         while(current!=null){
             System.out.print(current.data+" -->");
-            current=current.tailNode;
+            current=current.next;
         }
         System.out.print("null");
+        System.out.println();
 
     }
 
@@ -60,7 +64,7 @@ public class SinglyLinkedList {
         int count=0;
         ListNode current=headNode;
         while (current!=null){
-            current=current.tailNode;
+            current=current.next;
             count++;
         }
       return count;
@@ -68,7 +72,7 @@ public class SinglyLinkedList {
 
     public void insertFirstNode(int data){
         ListNode newNode=new ListNode(data);
-        newNode.tailNode=headNode;
+        newNode.next=headNode;
         headNode=newNode;
     }
 
@@ -79,10 +83,57 @@ public class SinglyLinkedList {
             return;
         }
         ListNode current=headNode;
-        while (current.tailNode!=null){
-           current=current.tailNode;
+        while (current.next  !=null){
+           current=current.next;
         }
-        current.tailNode=newNode;
+        current.next=newNode;
 
+    }
+
+
+    public void insertAtPos(int position,int value){
+        ListNode node=new ListNode(value);
+        if(position==1){
+            node.next=headNode;
+            headNode=node;
+        }
+        else {
+            ListNode previous=headNode;
+            int count=0;
+            while(count!=position-1){
+               previous=previous.next;
+               count ++;
+            }
+            ListNode current=previous.next;    // storing last half
+            previous.next=node;    // after first half points to new Node
+            node.next=current;     // after new node points to last half
+
+        }
+
+
+    }
+
+    public ListNode firstDelete(){
+        if(headNode==null)
+            return null;
+
+        ListNode temp=headNode;
+        headNode=headNode.next;    // removing first node
+        temp.next=null  ;
+        return temp;
+    }
+
+    public ListNode lastNode(){
+        if(headNode==null|| headNode.next==null){
+            return headNode;
+        }
+        ListNode current=headNode;
+        ListNode previous=null;
+        while (current.next!=null){
+            previous=current;
+            current=current.next;
+        }
+        previous.next=null;
+        return current;
     }
 }
