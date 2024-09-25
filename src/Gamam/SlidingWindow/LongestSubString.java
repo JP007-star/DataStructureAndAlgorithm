@@ -1,4 +1,4 @@
-package Gamam.slidingWindow;
+package Gamam.SlidingWindow;
 
 
 /*
