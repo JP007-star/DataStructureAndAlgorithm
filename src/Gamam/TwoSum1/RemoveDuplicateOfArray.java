@@ -1,4 +1,4 @@
-package Gamam.TwoSum;
+package Gamam.TwoSum1;
 
 public class RemoveDuplicateOfArray {
     public static void main(String[] args) {

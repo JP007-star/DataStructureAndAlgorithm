@@ -1,4 +1,4 @@
-package Gamam.TwoSum;
+package Gamam.TwoSum1;
 
 import java.util.HashMap;
 import java.util.Map;

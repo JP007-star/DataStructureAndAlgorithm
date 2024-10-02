@@ -1,4 +1,4 @@
-package Gamam.FastSlowPointer;
+package Gamam.FastSlowPointer2;
 
 public class HappyNumber {
 
