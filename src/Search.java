@@ -83,7 +83,7 @@ public class Search {
 
     private static int binarySearch(int[] arr, int target) {
         int startIndex = 0;
-        int endIndex = arr.length;
+        int endIndex = arr.length-1;
 
         int steps = 0;
 
@@ -92,7 +92,6 @@ public class Search {
             steps++;
             int pivot = startIndex + (endIndex - startIndex) / 2;
 
-            if (pivot <= arr.length - 1) {   //-->  eliminating array out of bound exception  when call number not in array
 
                 if (arr[pivot] == target) {
                     System.out.println("steps for binary search :" + steps);
@@ -103,7 +102,7 @@ public class Search {
                 } else {
                     endIndex = pivot - 1;
                 }
-            } else return -1;
+
 
 
         }
@@ -151,7 +150,7 @@ public class Search {
  while (left <=right)
 
 
- mid =left+(right-left)/2
+ mid =left+right/2
 
  if(nums[mid]== target)  return mid
 
