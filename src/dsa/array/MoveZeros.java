@@ -6,15 +6,12 @@ public class MoveZeros {
     public static void moveZeroes(int[] nums) {
         int nonZeroPointer = 0;
 
-        // Iterate through the array
         for (int i = 0; i < nums.length; i++) {
-            // If the current element is non-zero
             if (nums[i] != 0) {
-                // Swap the non-zero element with the element at nonZeroPointer
                 int temp = nums[nonZeroPointer];
                 nums[nonZeroPointer] = nums[i];
                 nums[i] = temp;
-                // Move the nonZeroPointer forward
+
                 nonZeroPointer++;
             }
         }
