@@ -2487,3 +2487,363 @@ sb.append("data");
 
 
 
+## 7) Git Performance Knowledge (Interview Bonus)
+
+| Feature | git fetch | git pull |
+|-------|----------|----------|
+| Downloads remote changes | ✅ | ✅ |
+| Automatically merges changes | ❌ | ✅ |
+| Safety | Very Safe | Risky (merge conflicts) |
+| Production / Team usage | Preferred | Use with caution |
+
+
+
+## 8) ConcurrentHashMap vs HashMap (High-Impact Interview Topic)
+
+### Core Difference
+
+**HashMap**
+- Single lock on the entire map
+- All threads are blocked during update
+- Not thread-safe
+
+**ConcurrentHashMap**
+- Segment / bucket-level locking
+- Only part of the map is locked
+- Other threads can continue working
+- Thread-safe and highly scalable
+
+---
+
+## 9) Fail-Fast vs Fail-Safe Iterators
+
+**Fail-Fast Iterators**
+- Immediately throw `ConcurrentModificationException`
+- Triggered when collection is structurally modified during iteration
+- Examples: `ArrayList`, `HashMap`, `Vector`
+
+**Fail-Safe Iterators**
+- Do NOT throw exception
+- Iterate over a **copy** of the collection
+- Examples: `CopyOnWriteArrayList`, `ConcurrentHashMap`
+
+---
+
+## 10) map() vs flatMap() (Java 8 Streams)
+
+### Core Difference
+
+| Feature | map() | flatMap() |
+|------|------|----------|
+| Output | One-to-One | One-to-Many (Flattened) |
+| Return Type | Stream<Stream<T>> (nested) | Stream<T> |
+| Use Case | Transform elements | Flatten collections |
+
+---
+
+### Example 1: map()
+
+```java
+List<String> names = List.of("java", "spring");
+
+names.stream()
+     .map(s -> s.toUpperCase())
+     .forEach(System.out::println);
+
+// Output:
+// JAVA
+// SPRING
+````
+
+---
+
+### Example 2: flatMap()
+
+```java
+List<List<String>> data = List.of(
+    List.of("A", "B"),
+    List.of("C", "D")
+);
+
+data.stream()
+    .flatMap(list -> list.stream())
+    .forEach(System.out::println);
+
+// Output:
+// A
+// B
+// C
+// D
+```
+
+---
+
+### Visual Understanding
+
+| Operation | Result           |
+| --------- | ---------------- |
+| map()     | [[A, B], [C, D]] |
+| flatMap() | [A, B, C, D]     |
+
+## 11) ACID = Atomicity, Consistency, Isolation, Durability
+
+Hibernate follows ACID using **database transactions** via `Session` and `Transaction`.
+
+---
+
+### 1) Atomicity (All or Nothing)
+
+**Meaning:**  
+Either all operations succeed or all are rolled back.
+
+```java
+Transaction tx = session.beginTransaction();
+try {
+    session.save(emp1);
+    session.save(emp2);
+    tx.commit();   // success
+} catch (Exception e) {
+    tx.rollback(); // rollback everything
+}
+````
+
+---
+
+### 2) Consistency (Valid State)
+
+**Meaning:**
+Data must follow database constraints.
+
+```java
+@Column(nullable = false)
+private String name;
+```
+
+If `name = null` → transaction fails ❌
+
+---
+
+### 3) Isolation (No Interference)
+
+**Meaning:**
+Parallel transactions should not affect each other.
+
+```properties
+hibernate.connection.isolation=2
+```
+
+*(READ_COMMITTED – default)*
+
+---
+
+### 4) Durability (Permanent Save)
+
+**Meaning:**
+Once committed, data is permanently stored.
+
+```java
+tx.commit(); // data survives crash/restart
+```
+
+---
+
+### ACID ↔ Hibernate Mapping
+
+| ACID        | Hibernate Support |
+| ----------- | ----------------- |
+| Atomicity   | commit / rollback |
+| Consistency | constraints       |
+| Isolation   | DB isolation      |
+| Durability  | DB persistence    |
+
+
+
+---
+
+## 12) Hibernate Transaction Management Types
+
+**Two types:**
+
+* **Programmatic** – Manual control using code
+* **Declarative** – Managed by Spring (`@Transactional`)
+
+**Example (Programmatic):**
+
+```java
+Transaction tx = session.beginTransaction();
+session.save(emp);
+tx.commit();
+```
+
+---
+
+## 13) How to Enable Transaction Management in Hibernate (Spring)
+
+```java
+@EnableTransactionManagement
+```
+
+Use `@Transactional` on service methods:
+
+```java
+@Transactional
+public void saveEmployee(Employee e) {
+    repository.save(e);
+}
+```
+
+---
+
+## 14) How to Enable Hibernate in Spring Boot
+
+Just add dependencies 👇
+Spring Boot auto-configures Hibernate.
+
+```xml
+spring-boot-starter-data-jpa
+mysql-connector-j
+```
+
+`application.properties`:
+
+```properties
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
+---
+
+## 15) Spring vs Spring Boot
+
+| Feature          | Spring       | Spring Boot |
+| ---------------- | ------------ | ----------- |
+| Configuration    | XML / Manual | Auto-config |
+| Setup            | Heavy        | Very fast   |
+| Embedded Server  | ❌            | ✅ (Tomcat)  |
+| Production Ready | ❌            | ✅           |
+
+---
+
+## 16) `@Controller` vs `@RestController`
+
+| Feature       | @Controller | @RestController |
+| ------------- | ----------- | --------------- |
+| Response      | View (JSP)  | JSON / XML      |
+| @ResponseBody | Required    | Built-in        |
+| Used for      | MVC         | REST APIs       |
+
+```java
+@RestController
+public class TestController {
+    @GetMapping("/hello")
+    public String hello() {
+        return "Hello";
+    }
+}
+```
+
+---
+
+## 17) Custom Immutable Class (Cloning Concept)
+
+**Rules:**
+
+* Class `final`
+* Fields `private final`
+* No setters
+* Return **defensive copies**
+
+```java
+final class Person {
+    private final Date dob;
+
+    public Person(Date dob) {
+        this.dob = new Date(dob.getTime());
+    }
+
+    public Date getDob() {
+        return new Date(dob.getTime());
+    }
+}
+```
+
+👉 **Cloning internally uses shallow copy**, so immutability avoids mutation issues.
+
+---
+
+## 18) Hibernate N+1 Problem
+
+**Problem:**
+
+* 1 query for parent
+* N queries for children
+
+**Example:**
+
+```java
+SELECT * FROM orders;      // 1
+SELECT * FROM items WHERE order_id=?; // N
+```
+
+**Solutions:**
+
+* `JOIN FETCH`
+* `@EntityGraph`
+* `FetchType.LAZY` (proper use)
+
+```java
+@Query("SELECT o FROM Order o JOIN FETCH o.items")
+```
+
+---
+
+## 19) Index Types in SQL
+
+* **Primary Index**
+* **Unique Index**
+* **Composite Index**
+* **Clustered Index**
+* **Non-Clustered Index**
+
+👉 Index improves **SELECT**, slows **INSERT/UPDATE**
+
+---
+
+## 20) Improve JSP / CSS Load Faster (Performance)
+
+* Minify CSS & JS
+* Use **CDN**
+* Enable **GZIP**
+* Cache static resources
+* Combine CSS files
+* Use `<link rel="preload">`
+
+---
+
+## 21) How to Enable Spring Actuator
+
+Add dependency:
+
+```xml
+spring-boot-starter-actuator
+```
+
+Enable endpoints:
+
+```properties
+management.endpoints.web.exposure.include=health,info
+```
+
+Access:
+
+```
+/actuator/health
+```
+
+---
+
+
+
+
+
+
