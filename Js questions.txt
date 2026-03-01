@@ -1,0 +1,697 @@
+
+Imp links
+https://www.interviewbit.com/javascript-interview-questions/
+https://www.interviewbit.com/react-interview-questions/
+https://github.com/sudheerj/reactjs-interview-questions
+Sample Questions////////////////////////
+HTML:
+
+what is <!DOCTYPE>
+how to identify html5
+
+div vs span
+Semantic Tags
+
+what are meta tags in html?
+what is use of link tag in head?
+what is empty tag or void tag?
+
+Explain new Form input types in HTML5: Number, email, file, url, search,   tel,range,color,date,time,num?  
+
+<picture> tag "srcset"
+
+width and max-width? width:horizonatal adds scrollbar example
+<figure> <figcaption>
+
+How to insert copyright symbol in html page:- copy, &#169
+
+html5 features?
+how to improve html performance?
+
+list few input type attributes
+Does html 5 need compiler? no
+usage of noValidate
+what is VW : viewport width
+
+Localstorage vs sessionstorage
+web worker?
+canvas vs svg
+Cookies
+URL
+Differece b/w GET and POST
+Search engines? SEO
+Accessibility(ScreenReader)
+Performance:
+-----
+Lazyloading
+babel
+buildtools for react js: create react app
+buildtools for js: webpack
+
+
+CSS
+Difference between ID and class
+css selector:
+ simple selector
+ combinator selector
+ puesudo class  p:nth-child(2)?
+ Psudo element
+ Attribute selectors: input[type="text"]
+
+Difference in inline | Block | Inline-block
+Difference in Opacity | Visibility | Display
+
+Box Model
+Flexbox
+Grid
+Positions
+How inheritance work in CSS
+what is transition?
+difference b/w em ,rem?
+
+what is Specificity?
+how to select child element?
+css object model?
+how to target tag in css?
+AA.AAA?
+BEM?
+AEm?
+
+
+Javascript:
+
+What is Javascript?
+What are data types? Primitive and Non primitive data type?
+What are variables? 
+What is diff var, let,const?
+What is Temporal dead zone?
+Whats is the Scopes in js? Block, Functional, Global, Lexical?
+Is Javascript a statically typed or a dynamically typed language?
+What is call by value and call by reference?
+What are hoisting?
+Functions?
+Array?
+Object?
+
+
+
+Array const
+Deep copy , shallow and copy
+hoisting
+
+Ployfils: Allowing developer to write morden js code in old broweseros like babel ex.Array.prototype.includes()
+mock filter
+
+Lexical Scoping
+Closure
+IIFY
+What is callback give an example?
+Explain Higher Order Functions in javascript.
+
+What is NaN property in JavaScript?
+What is currying in JavaScript?add(3)(4) 
+memoization
+how to handle errors in js?
+ 
+DOM
+
+Iteration?
+difference b/w forEach and map?
+for-in //itetare object
+for-of //iterate array
+for loop
+Singleton design pattern
+difference b/w reduce,filter,map;
+find method? only one element of array
+
+What do you mean by JavaScript Design Patterns?
+
+Slice, Splice
+Map
+How to add click event on without touching html code//DOM 
+
+ES6:
+Advantage of arrow functions over normal function?
+let and const
+Array destructing/object
+default parameter
+spread/rest operator
+generators
+Set
+Map
+Promises
+Difference between ansyc, await and promises?
+
+
+what is Asynchronous code in js?
+javascript is single thread? means one run line after another
+setTimeout(()=>{},1000)
+Promise 
+Promise chaining
+Async Await
+fetch
+ways to call api?---fetch(),axios.get(),XMLrequest(),jquery()
+
+addeventListerner ('',()=>{},false)
+why to use e.preventDefault()
+Event capturing
+Event bubbling(false)(default)
+babel,webpack?
+gulp,grant?
+
+
+Most asked:
+call/apply/bind: Borrowing the function from one obj to another
+prototype
+prototype chaining
+Singleton design pattern
+minification
+how to increase optimization?
+how to check optimization? light house,GTMatrix, pageSpeed insights
+Advantage of arrow functions over normal function?
+What do you mean by JavaScript Design Patterns?
+Explain Higher Order Functions in javascript.
+What is currying in JavaScript?add(3)(4) 
+how to handle errors in js?
+Event Deligation?
+Debouncing?
+what is event loop?
+what is memoriation in js?
+
+
+Coding question::::
+1...Sum of array?[2,3,4,5,6,7,8]
+--const date = array.reduce((acc, currentval) => acc + currentval, 0)
+--console.log(date);
+
+--let sum = 0;
+--for (let i = 0; i < arrays.length; i++) {
+   -- sum += arrays[i]
+--}
+console.log(sum);
+
+2....Convert array to object?
+---Object.assign({},arrays)
+
+Fetch only key of object?
+--Object.keys(objeList);
+
+Fetch only value of object?
+--Object.values(objeList);
+
+Fetch both key and value of object?
+--Object.entries(objeList);
+
+print unique value from array?[3,4,7,3]
+
+Print least value from array?arr.sort(a,b)
+Print height value from array?
+counter js?
+
+console.log(null<0);//false
+console.log(null>0);//false
+console.log(null<=0);//true
+console.log(null>=0);//true
+console.log(null==0);//false
+
+console.log(undefined<0)//false
+console.log(undefined>0);//false
+console.log(undefined<=0);//false
+console.log(undefined>=0);//false
+console.log(undefined==0);//false
+console.log(null==undefined);//true
+
+console.log(+"z"+1);//NaN
+console.log(""+2+1);//21
+console.log(+1+1);//2
+
+
+
+React :
+What is React?
+Advantages of React?
+what is Virtual DOM?
+what is JSX
+
+Difference between class and functional component 
+Difference between states and props
+
+what are state and props?
+
+How to pass data from parent to child?  props
+How to pass data between siblings: Content, Redux
+How to pass data from child to parent? props with callback function
+
+pureComponent? class component
+memo? functional components
+
+Controlled Component?
+Uncontrolled Component?
+ref()
+
+Lifecycle methods and its usage?
+what is constructor
+what is super?
+Routing?
+strict mode?
+
+----------------------------------------
+what are Hooks?
+What is optional argument passed to setState?
+what is second argument in useEffect?Dependency in array
+useState()
+useEffect()
+useContext?
+useReducer?
+useRef?
+useCallback?
+useMemo?
+difference b/w useCalback and useMemo()?
+Custom hooks
+Formic?
+
+
+Diffing algorithm?/reconcilation/fiber algorithm
+what is stateLifting?liftign state up?
+one way data-Binding?uni-directional data binding?
+two-way data binding /bi-directional data binding?
+What is the difference between dependencies and devDependencies?
+Why should we not update the state directly?
+call api in all ways?
+-----------------------------------------------------------
+
+React Interfaces
+React PropTypes
+
+--------------------------------------------------------
+Error boundry?
+React-query?calling Rest api client
+CSS Framework :-- Tailwind and bootstrap
+how to handle error in react?
+what is babel?Javascript transfiler
+webpack and linting minification?
+How you optimize react project?
+React devtools?
+what is second paramater passed to React.memo?
+and useCallback with function?
+-----------------------------------------------------------
+Lazyloading
+Types of router dom in react?
+
+Synthetic Components (Higher-Order Components):
+Synthetic Elements (Virtual DOM):
+Synthetic Events
+
+how to check security of react application?
+how to increase performance?
+how to check performance of application?
+how to make our react application is accessible for all browser?
+-----------------------------------------------
+Monolithic architecture?
+Microfrontend?
+To check performance:
+         Lighthouse
+         Pagespeed insights
+         GTMatrix
+ESLint:========check coding standards and code quality
+pritter:========code formatting tool
+Babel? javascript compiler and transpiler
+Webpack? module bundler
+Minification?
+React devtools?-component,profiller
+Redux devtools? redux
+styled components
+css framework:
+              material UI
+              Tailwind
+              Bootstrap
+React-virtulaziton
+react-window
+
+Protected Route
+Sonarqube.
+
+Redux : 
+What is redux
+Building blocks of redux and its use
+How to handle async actions?
+what is mean by dispatch?
+
+Redux-Toolkit:
+Flow
+
+Testing:
+Unit Testing (JEST) : 
+What is spy function?
+What are Matchers?
+What is Mocking?
+How to test setTimeout/Async functions in jest
+
+Tailwind:
+
+Scss:
+what is Sass?
+why do you use Sass?
+Operators?
+Variables?
+nesting?
+@mixin and @includes/parameters
+Particals?@import
+Functions? 
+
+CODING:
+1. sum of array?
+2. Greatest Value of array?
+3. Lowest value of array?
+4. unique value from array?
+5. Find total num of same words in string?
+
+what is SRE 
+Micro frontend
+how to deployment works?
+how to secure api?
+how to secure application?
+what is ESLint?
+
+code#1
+const arr=[1,2,3,4,5];
+const arr1 = [6,7,8,9,10];
+arr.push(6);
+arr1.push(11);
+console.log(arr + arr1)
+
+Output:  1,2,3,4,5,66,7,8,9,10,11
+
+Explanation: if we use + symbol it will concat but 
+TO concat two array use spread oprator.
+console.log([...arr, ...arr1])
+output: [1,2,3,4,5,6,6,7,8,9,10,11]
+
+code#2
+
+const obj = {
+  firstName: "Bhagya",
+  LastName: "chincholi",
+  getNames: { age : 20 , role : "developer" }
+}
+
+const  data = {...obj}
+
+data.firstName = "sharan"
+data.LastName = "patil";
+data.getNames.age = 30;
+ 
+console.log(obj)
+
+OUTPUT:
+{ firstName:"Bhagya",
+  LastName:"chincholi",
+   getNAmes:{age:30, role : "developer" }
+}
+
+Explanation: when we use spread opeartor it will give a copy of that array not original arr so value won't change.
+but when we use obj in side obj it will give original value so value will updated. 
+
+code#3:
+const str = "chincholi"
+str[0] = "C";
+console.log(str);
+
+OUTPUT: chincholi
+
+str = "C"+ str.slice(1);
+Chincholi
+
+Explanation:
+Using str[0] it will not update the index of arr value,so use str = "C"+ str.slice(1); to change value.
+
+code#4
+const arr = [2,4,5];
+const data = 2;
+const data1 = arr.reduce((acc,current,index)=>{
+   data += (acc*current*index);
+},500)
+
+console.log(data)
+
+OUTPUT: 
+528
+
+
+code#5
+
+const str = "bhagyashree chincholi";
+--Reverse the string?
+
+function fun(data){
+  return data.split("").reverse().join("")
+}
+const print = fun(str);
+console.log(print)
+
+OUTPUT:
+
+ilohcnihc eerhsaygahb
+
+code#6
+
+const str = "bhagyashree chincholi";
+function fun(data){
+  const list = data.split("").reverse().join('');
+  const d= (list.split(' '))
+  const l = d.map((item)=>item.charAt(0).toUpperCase() + item.slice(1)).join(' ');
+   return l;
+  }
+ 
+const print = fun(str);
+console.log(print)
+
+Output:
+Ilohcnihc Eerhsaygahb
+
+
+code#7
+const str = "bhagyashree chincholi sharan chincholi"
+
+const name = data(str , '' );
+const list = data(name, ' ');
+console.log(list);
+
+function data(string , separator){
+    return string.split(separator).reverse().join(separator)
+}
+
+Output:
+eerhsaygahb ilohcnihc narahs ilohcnihc
+
+
+code#8
+
+const str = ["hello","bhagya","hello","bhagya","hello"]
+
+function fun(str){
+    const count = {};
+      for(const key of str){
+       if(count[key]){
+         count[key]+=1;
+       } else {
+         count[key] = 1;
+        }
+    }
+  return count;
+}
+const data = fun(str);
+console.log(data)
+
+OUTPUT:
+{ hello: 3, bhagya: 2 }
+
+
+Code#9
+const arr = [1,2,3,3,2,4,5,1,2,3,6,7,3];
+
+way:1
+Find the Unique value?
+const data =[...new Set(arr)]
+
+way2:
+
+function fun(arr){
+let data=[];
+   for(let i=0;i<arr.length;i++){
+      if(data.indexOf(arr[i])=== -1){ 
+         data.push(arr[i])
+       } 
+   }
+return data;
+}
+const data = fun(arr);
+console.log(data)
+
+way3:
+
+const data = arr.filter((value,index,self)=>{
+return self.indexOf(value)===index;
+
+
+output:
+[1, 2, 3, 4, 5, 6, 7]
+
+
+Code#10
+
+const arr=[1,2,3,7,100,38,2000]
+lowest value:
+
+function fun(arr)
+{   
+   const data = arr.sort((a,b) => a-b);
+    console.log(data[0])
+}
+fun(arr)
+
+way2:
+function fun1(arr)
+{
+let name = arr[0]
+ for(let i=0;i<arr.legth;i++){
+if(arr[i]>name)
+{
+name= arr[i]
+}
+return name;
+
+OUTPUT:
+1
+
+Code#11
+
+const arr=[1,2,3,7,100,38,2000]
+Greates value:
+
+function fun(arr)
+{   
+   const data = arr.sort((a,b) => b-a );
+    console.log(data[0])
+}
+fun(arr):
+
+OUTPUT:
+2000
+
+
+Code#12
+
+const data = arr.filter((item)=>{ 
+    const data = item.name.includes("bhagya");
+    const data1 = item.name.includes("chincholi");
+
+return data && data1;
+}
+console.log(data)
+
+url = "https://dummyjson.com/products"
+let products = [];
+let dataList =[];
+let sortList = []
+fetch(url)
+    .then((response) => {
+        return response.json()
+    })
+    .then((result) => {
+        products = result.products.map((item) => item);
+        // console.log(products);
+        dataList = products.filter((search)=>{
+            const list = search.category.includes("smartphones");
+            const lists = search.brand.includes("OPPO");
+            return list && lists;
+        })
+
+        sortList = products.sort((a,b)=>{
+            const nameA = a.title.toLowerCase();
+            const nameB = b.title.toLowerCase();
+            return nameA.localeCompare(nameB);
+        })
+        console.log(dataList);
+        console.log(products);
+        console.log(sortList);
+
+    })
+    
+
+Code#13
+
+const str = "   Write,       Edit     and Run your Javascript code using JS Online   Compiler   ";
+
+ Query: find the length of string without using length property
+
+function fun(name){
+    const data = name.replace(/\s+/g,' ');
+    console.log(data.length);
+    let count= 0;
+    while(data[count]!==undefined){
+        count++;
+    }
+    return count;
+}
+console.log(fun(str))
+
+
+Code#14
+
+const str =" Javascript  bhagyashreechincholi code using JS Online   Compiler   ";
+Quert: print largest word in the string
+
+function fun(name){
+    const data = name.replace(/\s+/g,' ');
+    const s = data.trim()
+    const print = s.split(' ').sort((a,b)=> b.length - a.length);
+    console.log(print[0]);
+   
+  
+}
+fun(str)
+
+Code#15
+
+const numbers = [10, 5, 8, 20, 3];
+
+const greatestValue = numbers.reduce((max, current) => {
+  return current > max ? current : max;
+}, numbers[0]);
+
+console.log("The greatest value:", greatestValue); // Output: 20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
